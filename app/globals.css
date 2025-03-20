@@ -11,9 +11,6 @@
 
 /* Subtle animated gradient */
 body {
-  /* background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
-  background-size: 400% 400%;
-  animation: gradientAnimation 15s ease infinite; */
   background: radial-gradient(circle at center, #16213e 20%, #0f3460 50%, #1a1a2e 80%);
   height: 100vh;
   display: flex;

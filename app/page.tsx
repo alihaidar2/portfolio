@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -32,10 +33,12 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
+          <Image
             src="/github.svg"
             alt="GitHub"
-            className="w-8 h-8 invert hover:scale-110 transition duration-300"
+            width={32}
+            height={32}
+            className="invert hover:scale-110 transition duration-300"
           />
         </a>
         <a
@@ -43,17 +46,21 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
+          <Image
             src="linkedin.svg"
             alt="LinkedIn"
-            className="w-8 h-8 invert hover:scale-110 transition duration-300"
+            width={32}
+            height={32}
+            className="invert hover:scale-110 transition duration-300"
           />
         </a>
         <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-          <img
+          <Image
             src="resume.svg"
             alt="Resume"
-            className="w-8 h-8 invert hover:scale-110 transition duration-300"
+            width={32}
+            height={32}
+            className="invert hover:scale-110 transition duration-300"
           />
         </a>
       </div>
