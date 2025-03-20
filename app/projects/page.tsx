@@ -1,34 +1,37 @@
-const projects = [
-  {
-    title: "Fantasy PL Stats",
-    link: "https://fantasyplstats.com",
-    desc: "A fantasy football data analysis app.",
-  },
-  {
-    title: "Restaurant Data Dive",
-    link: "https://github.com/yourusername/restaurant-data-dive",
-    desc: "Data insights for small businesses using Databricks & AWS.",
-  },
-];
+import Link from "next/link";
 
 export default function Projects() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold">Projects</h1>
-      <div className="mt-6 space-y-4">
-        {projects.map((project, index) => (
-          <a
-            key={index}
-            href={project.link}
-            target="_blank"
-            className="block p-4 bg-white shadow-md rounded-md hover:bg-gray-200 transition"
-          >
-            <h2 className="text-xl text-black font-semibold">
-              {project.title}
-            </h2>
-            <p className="text-gray-600">{project.desc}</p>
-          </a>
-        ))}
+    <div className="flex flex-col items-center justify-center h-screen text-white text-center mt-16">
+      {/* Title */}
+      <h1 className="text-5xl font-bold animate-fade-in">
+        My <span className="text-blue-400">Projects</span>
+      </h1>
+
+      <p className="mt-4 text-lg text-gray-300 max-w-2xl">
+        Here are some of the projects I’ve worked on, showcasing my skills in
+        full-stack development, data engineering, and AI-driven solutions.
+      </p>
+
+      {/* Placeholder for Future Projects */}
+      <div className="mt-6 flex flex-col space-y-4">
+        <div className="bg-gray-800 p-6 rounded-lg shadow-lg max-w-lg w-full">
+          <h2 className="text-xl font-semibold text-blue-400">Project 1</h2>
+          <p className="text-gray-300 mt-2">Description of project 1.</p>
+        </div>
+        <div className="bg-gray-800 p-6 rounded-lg shadow-lg max-w-lg w-full">
+          <h2 className="text-xl font-semibold text-blue-400">Project 2</h2>
+          <p className="text-gray-300 mt-2">Description of project 2.</p>
+        </div>
+      </div>
+
+      {/* Back to Home Button */}
+      <div className="mt-6">
+        <Link href="/">
+          <button className="px-6 py-3 border border-white hover:bg-white hover:text-gray-900 text-white font-semibold rounded-lg shadow-lg transition duration-300">
+            Back to Home
+          </button>
+        </Link>
       </div>
     </div>
   );
