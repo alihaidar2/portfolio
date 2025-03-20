@@ -1,5 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faFileAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Home() {
   return (
@@ -27,41 +29,35 @@ export default function Home() {
       </div>
 
       {/* Social Links */}
-      <div className="mt-6 flex space-x-4">
+      <div className="mt-6 flex space-x-6">
+        {/* GitHub */}
         <a
           href="https://github.com/alihaidar2"
           target="_blank"
           rel="noopener noreferrer"
+          className="transition-transform duration-300 hover:scale-125"
         >
-          <Image
-            src="/github.svg"
-            alt="GitHub"
-            width={32}
-            height={32}
-            className="invert hover:scale-110 transition duration-300"
-          />
+          <FontAwesomeIcon icon={faGithub} className="text-[2.5rem]" />
         </a>
+
+        {/* LinkedIn */}
         <a
           href="https://linkedin.com/in/ahaidar97"
           target="_blank"
           rel="noopener noreferrer"
+          className="transition-transform duration-300 hover:scale-125"
         >
-          <Image
-            src="linkedin.svg"
-            alt="LinkedIn"
-            width={32}
-            height={32}
-            className="invert hover:scale-110 transition duration-300"
-          />
+          <FontAwesomeIcon icon={faLinkedin} className="text-[2.5rem]" />
         </a>
-        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-          <Image
-            src="resume.svg"
-            alt="Resume"
-            width={32}
-            height={32}
-            className="invert hover:scale-110 transition duration-300"
-          />
+
+        {/* Resume */}
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="transition-transform duration-300 hover:scale-125"
+        >
+          <FontAwesomeIcon icon={faFileAlt} className="text-[2.5rem]" />
         </a>
       </div>
     </div>

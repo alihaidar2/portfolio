@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function Projects() {
   return (
     <div className="flex flex-col items-center justify-center h-screen text-white text-center mt-16">
@@ -19,19 +17,6 @@ export default function Projects() {
           <h2 className="text-xl font-semibold text-blue-400">Project 1</h2>
           <p className="text-gray-300 mt-2">Description of project 1.</p>
         </div>
-        <div className="bg-gray-800 p-6 rounded-lg shadow-lg max-w-lg w-full">
-          <h2 className="text-xl font-semibold text-blue-400">Project 2</h2>
-          <p className="text-gray-300 mt-2">Description of project 2.</p>
-        </div>
-      </div>
-
-      {/* Back to Home Button */}
-      <div className="mt-6">
-        <Link href="/">
-          <button className="px-6 py-3 border border-white hover:bg-white hover:text-gray-900 text-white font-semibold rounded-lg shadow-lg transition duration-300">
-            Back to Home
-          </button>
-        </Link>
       </div>
     </div>
   );
