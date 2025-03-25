@@ -7,7 +7,12 @@ export default function Projects() {
         My <span className="text-emerald-400">Projects</span>
       </h1>
       <p className="text-gray-300 mb-8">
-        Here are some of the projects I&apos;ve worked on.
+        Here&apos;s a curated selection of projects I&apos;ve worked on — each
+        one showcasing a different aspect of my skills in full-stack
+        development, data engineering, and interactive dashboard design. From
+        transforming raw datasets into meaningful insights to building intuitive
+        user interfaces, these case studies reflect my commitment to delivering
+        thoughtful, data-driven solutions.
       </p>
 
       <Link href="/projects/balaji">

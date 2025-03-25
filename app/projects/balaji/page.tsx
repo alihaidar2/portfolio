@@ -128,6 +128,24 @@ print("Data cleaning complete.")
         </div> */}
       </section>
 
+      <section className="max-w-4xl mx-auto mb-10">
+        <p className="text-gray-300 mb-4">
+          Want to see how a data-driven dashboard like this could help you solve
+          real business challenges?
+          <br />
+          <a
+            href="/balaji_food/balaji_food_report.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-emerald-400 underline hover:text-emerald-300 transition"
+          >
+            Download the full report
+          </a>{" "}
+          for a closer look at the problems it addresses, the value it delivers,
+          and how the same approach could be adapted to your own data.
+        </p>
+      </section>
+
       <p className="text-sm text-gray-400 italic text-center mt-2">
         *The visualizations shown are based on sample sales data generated for
         demo purposes.
