@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen text-white text-center mt-16">
+    <div className="flex flex-col items-center justify-center min-h-screen text-white text-center mt-16">
       {/* Hero Text */}
       <h1 className="text-5xl font-bold animate-fade-in">
-        Hello, I&apos;m <span className="text-emerald-400">Ali Haidar</span>
+        Hello, I&apos;m <span className="text-emerald-400">Ali</span>
       </h1>
       <p className="mt-4 text-lg text-gray-300">
         Full Stack Developer | Data Engineer | AI Enthusiast
