@@ -37,13 +37,15 @@ export default function BalajiPage() {
           <p className="mt-2 text-gray-400 text-sm">
             Sample snippet of the raw CSV:
           </p>
-          <pre className="bg-gray-900 text-gray-200 p-4 mt-3 rounded text-sm">
-            {`date,transaction_type,transaction_amount,item_price,quantity
+          <div className="overflow-x-auto">
+            <pre className="bg-gray-900 text-gray-200 p-4 mt-3 rounded text-sm w-full min-w-[300px] overflow-x-auto">
+              {`date,transaction_type,transaction_amount,item_price,quantity
 12-01-2025,Sale,389.7,12.99,30
 01/13/2025,Sale,190.0,9.50,20
 ...
 `}
-          </pre>
+            </pre>
+          </div>
         </div>
 
         {/* Transform (Reverted snippet, no scroll) */}
@@ -57,8 +59,9 @@ export default function BalajiPage() {
             <code>transaction_type</code>, and created new features. Below is
             the <strong>partial snippet</strong> (unchanged):
           </p>
-          <pre className="bg-gray-900 text-gray-200 p-4 mt-3 rounded text-sm">
-            {`import pandas as pd
+          <div className="overflow-x-auto">
+            <pre className="bg-gray-900 text-gray-200 p-4 mt-3 rounded text-sm w-full min-w-[300px] overflow-x-auto">
+              {`import pandas as pd
 
 def parse_dates(date_str):
     date_formats = ['%d-%m-%Y','%m/%d/%Y','%d/%m/%Y','%Y-%m-%d']
@@ -86,7 +89,8 @@ data['year'] = data['date'].dt.year
 data.to_csv('cleaned_sales_data.csv', index=False)
 print("Data cleaning complete.")
 `}
-          </pre>
+            </pre>
+          </div>
           <p className="text-gray-300 mt-2">
             This ensures consistent date formats, verifies pricing, and enriches
             the dataset.
