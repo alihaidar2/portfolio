@@ -3,37 +3,41 @@
 import { useState } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"; // Hamburger & close icons
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
+/**
+ * Navbar with a desktop menu and a mobile hamburger toggle.
+ * - Same styling: dark gray background, emerald hover.
+ * - "Ali Haidar | Full Stack & Data Engineer" clickable home link.
+ */
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const toggleMenu = () => setIsOpen((prev) => !prev);
+
   return (
-    <nav className="fixed top-0 left-0 w-full bg-gray-900 bg-opacity-90 text-white py-4 shadow-lg z-50">
+    <nav className="fixed top-0 left-0 w-full bg-[#1f1f1f] text-white py-4 shadow-lg z-50">
       <div className="container mx-auto flex justify-between items-center px-6">
-        {/* Logo / Brand Name */}
+        {/* Brand Name / Home Link */}
         <Link
           href="/"
-          className="text-xl font-bold text-white hover:text-blue-400 transition"
+          className="text-xl font-bold text-white hover:text-emerald-400 transition"
         >
           Ali Haidar | Full Stack & Data Engineer
         </Link>
 
-        {/* Desktop Navigation Links */}
+        {/* Desktop Nav Links */}
         <div className="hidden md:flex space-x-6">
-          <Link href="/projects" className="hover:text-blue-400 transition">
+          <Link href="/projects" className="hover:text-emerald-400 transition">
             Projects
           </Link>
-          <Link href="/contact" className="hover:text-blue-400 transition">
+          <Link href="/contact" className="hover:text-emerald-400 transition">
             Contact
           </Link>
         </div>
 
-        {/* Mobile Menu Toggle Button */}
-        <button
-          className="md:hidden text-white"
-          onClick={() => setIsOpen(!isOpen)}
-        >
+        {/* Hamburger Menu (Mobile Only) */}
+        <button className="md:hidden text-white" onClick={toggleMenu}>
           <FontAwesomeIcon icon={isOpen ? faTimes : faBars} size="lg" />
         </button>
       </div>
@@ -44,14 +48,14 @@ export default function Navbar() {
           <div className="flex flex-col items-center space-y-4">
             <Link
               href="/projects"
-              className="hover:text-blue-400 transition"
+              className="hover:text-emerald-400 transition"
               onClick={() => setIsOpen(false)}
             >
               Projects
             </Link>
             <Link
               href="/contact"
-              className="hover:text-blue-400 transition"
+              className="hover:text-emerald-400 transition"
               onClick={() => setIsOpen(false)}
             >
               Contact

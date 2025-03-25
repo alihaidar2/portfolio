@@ -11,7 +11,8 @@
 
 /* Subtle animated gradient */
 body {
-  background: radial-gradient(circle at center, #16213e 20%, #0f3460 50%, #1a1a2e 80%);
+  background: linear-gradient(135deg, #1f1f1f 30%, #10b981 100%);
+  color: #f4f4f5;
   height: 100vh;
   display: flex;
   align-items: center;

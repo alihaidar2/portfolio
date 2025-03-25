@@ -8,7 +8,7 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center h-screen text-white text-center mt-16">
       {/* Hero Text */}
       <h1 className="text-5xl font-bold animate-fade-in">
-        Hello, I&apos;m <span className="text-blue-400">Ali Haidar</span>
+        Hello, I&apos;m <span className="text-emerald-400">Ali Haidar</span>
       </h1>
       <p className="mt-4 text-lg text-gray-300">
         Full Stack Developer | Data Engineer | AI Enthusiast
@@ -17,7 +17,10 @@ export default function Home() {
       {/* CTA Buttons */}
       <div className="mt-6 flex space-x-4">
         <Link href="/projects">
-          <button className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg shadow-lg transition duration-300">
+          <button
+            className="px-6 py-3 bg-emerald-500 hover:bg-emerald-600
+ text-white font-semibold rounded-lg shadow-lg transition duration-300"
+          >
             View Projects
           </button>
         </Link>
