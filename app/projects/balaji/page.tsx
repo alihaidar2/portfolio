@@ -10,10 +10,10 @@ export default function BalajiPage() {
       {/* 1) PROJECT TITLE & OVERVIEW */}
       <section className="max-w-4xl mx-auto mb-10">
         <h1 className="text-4xl font-bold">
-          Baraji Foods <span className="text-emerald-400">Sales Analysis</span>
+          Balaji Foods <span className="text-emerald-400">Sales Analysis</span>
         </h1>
         <p className="mt-4 text-gray-300">
-          A comprehensive project exploring Baraji Foods&apos; sales
+          A comprehensive project exploring Balaji Foods&apos; sales
           performance, product insights, weekly sales patterns, and
           transaction/payment trends. This overview highlights the entire ETL
           pipeline along with the resulting interactive dashboards.
