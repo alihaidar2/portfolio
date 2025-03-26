@@ -12,7 +12,7 @@ export default function BalajiCarousel() {
   // Hardcoded array referencing each file in /public/balaji_food_images
   const balajiImages = [
     "/balaji_food/sales-overview.png",
-    "/balaji_food/sales-overview.png",
+    "/balaji_food/product-insights.png",
     "/balaji_food/time-weekly-sales-pattern.png",
     "/balaji_food/transaction-payment-insights.png",
   ];
