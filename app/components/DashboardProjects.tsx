@@ -1,24 +1,19 @@
+import Link from "next/link";
+
 export default function DashboardProjects() {
   return (
     <>
-      <div className="bg-gray-800 p-6 rounded-lg shadow-lg max-w-lg w-full">
-        <h2 className="text-xl font-semibold text-emerald-400">
-          Dashboard Project 1
-        </h2>
-        <p className="text-gray-300 mt-2">
-          Built a React-based data visualization dashboard for real-time
-          analytics...
-        </p>
-      </div>
-
-      <div className="bg-gray-800 p-6 rounded-lg shadow-lg max-w-lg w-full">
-        <h2 className="text-xl font-semibold text-emerald-400">
-          Dashboard Project 2
-        </h2>
-        <p className="text-gray-300 mt-2">
-          Implemented interactive charts & graphs to track KPIs...
-        </p>
-      </div>
+      <Link href="/projects/balaji">
+        <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition cursor-pointer max-w-xl mx-auto">
+          <h2 className="text-2xl font-semibold text-emerald-400 mb-2">
+            Balaji Foods Sales Analysis
+          </h2>
+          <p className="text-gray-300">
+            A deep dive into sales patterns, product insights, and payment
+            trends from Balaji Foods&apos; sales data.
+          </p>
+        </div>
+      </Link>
     </>
   );
 }

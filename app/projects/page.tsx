@@ -1,31 +1,54 @@
-import Link from "next/link";
+"use client";
+import { useState } from "react";
+import DashboardProjects from "../components/DashboardProjects";
+import MigrationProjects from "../components/MigrationProjects";
 
 export default function Projects() {
+  const [activeTab, setActiveTab] = useState<"dashboard" | "migration">(
+    "dashboard"
+  );
+
   return (
     <div className="min-h-screen pt-24 px-4 text-white text-center">
       <h1 className="text-4xl font-bold mb-6">
         My <span className="text-emerald-400">Projects</span>
       </h1>
-      <p className="text-gray-300 mb-8">
+      <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
         Here&apos;s a curated selection of projects I&apos;ve worked on — each
         one showcasing a different aspect of my skills in full-stack
-        development, data engineering, and interactive dashboard design. From
-        transforming raw datasets into meaningful insights to building intuitive
-        user interfaces, these case studies reflect my commitment to delivering
-        thoughtful, data-driven solutions.
+        development, data engineering, and interactive dashboard design.
       </p>
 
-      <Link href="/projects/balaji">
-        <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition cursor-pointer max-w-xl mx-auto">
-          <h2 className="text-2xl font-semibold text-emerald-400 mb-2">
-            Balaji Foods Sales Analysis
-          </h2>
-          <p className="text-gray-300">
-            A deep dive into sales patterns, product insights, and payment
-            trends Balaji Foods&apos; sales data.
-          </p>
-        </div>
-      </Link>
+      {/* Tab Buttons */}
+      <div className="flex justify-center mb-6 space-x-4">
+        <button
+          onClick={() => setActiveTab("dashboard")}
+          className={`px-4 py-2 rounded ${
+            activeTab === "dashboard"
+              ? "bg-emerald-500 text-white"
+              : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+          }`}
+        >
+          Dashboard Projects
+        </button>
+        <button
+          onClick={() => setActiveTab("migration")}
+          className={`px-4 py-2 rounded ${
+            activeTab === "migration"
+              ? "bg-emerald-500 text-white"
+              : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+          }`}
+        >
+          Migration Projects
+        </button>
+      </div>
+
+      {/* Conditional Content */}
+      {activeTab === "dashboard" ? (
+        <DashboardProjects />
+      ) : (
+        <MigrationProjects />
+      )}
     </div>
   );
 }
