@@ -13,10 +13,9 @@ import {
 import ETLPipeline from "./ETLPipeline";
 
 export default function MigrationProjects() {
-  // The same array you had before, but we’ll rename it “migrationCards”
-  const migrationCards = [
+  const digitizationCards = [
     {
-      title: "Extract",
+      title: "I - Extract",
       steps: [
         {
           title: "Document Intake & Preprocessing",
@@ -33,7 +32,7 @@ export default function MigrationProjects() {
       ],
     },
     {
-      title: "Transform",
+      title: "II - Transform",
       steps: [
         {
           title: "Text Cleaning & Noise Filtering",
@@ -56,7 +55,7 @@ export default function MigrationProjects() {
       ],
     },
     {
-      title: "Load",
+      title: "III - Load",
       steps: [
         {
           title: "Validation & QA Checks",
@@ -76,8 +75,8 @@ export default function MigrationProjects() {
 
   return (
     <ETLPipeline
-      pipelineTitle="OCR Migration Pipeline"
-      cards={migrationCards}
+      pipelineTitle="PDF Archive Digitization"
+      cards={digitizationCards}
     />
   );
 }

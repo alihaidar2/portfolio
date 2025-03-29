@@ -70,13 +70,11 @@ export default function ETLPipeline({
           exit="exit"
           transition={{ duration: 0.3, ease: "easeInOut" }}
           className="text-2xl font-semibold text-emerald-400 mb-4"
-        >
-          {cards[currentCard].title}
-        </motion.h3>
+        ></motion.h3>
       </AnimatePresence>
 
       {/* Card Body */}
-      <div className="relative max-w-2xl w-full text-white rounded-lg shadow-lg p-8 bg-gray-900">
+      <div className="relative max-w-2xl w-full text-white rounded-lg shadow-lg pt-8 px-8 pb-4 bg-gray-900">
         {/* Left Button */}
         <button
           onClick={handlePrev}
@@ -96,6 +94,12 @@ export default function ETLPipeline({
               exit="exit"
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
+              {/* Step Title */}
+              <h3 className="text-2xl font-semibold text-white text-center mb-4 pb-4 border-b border-gray-700">
+                {cards[currentCard].title}
+              </h3>
+
+              {/* Steps */}
               {cards[currentCard].steps.map((step, index) => (
                 <div key={index} className="flex items-start gap-4 mb-4">
                   <div className="mt-1">{step.icon}</div>
