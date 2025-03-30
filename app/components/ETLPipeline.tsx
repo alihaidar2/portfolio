@@ -16,16 +16,15 @@ interface ETLCard {
 }
 
 interface ETLPipelineProps {
-  // Title shown at the top, e.g. "OCR Migration Pipeline"
-  pipelineTitle: string;
-  // The array of ETL segments (e.g. Extract, Transform, Load)
-  cards: ETLCard[];
+  pipelineTitle: string; // Project Title
+  pipelineDescription: string; // Project Description
+  cards: ETLCard[]; // The array of ETL segments (e.g. Extract, Transform, Load)
 }
 
 const variants = {
   enter: (direction: number) => ({
     opacity: 0,
-    x: direction > 0 ? 20 : -20,
+    x: direction > 0 ? -20 : 20,
   }),
   center: {
     opacity: 1,
@@ -33,14 +32,15 @@ const variants = {
   },
   exit: (direction: number) => ({
     opacity: 0,
-    x: direction < 0 ? 20 : -20,
+    x: direction < 0 ? -20 : 20,
   }),
 };
 
 export default function ETLPipeline({
   pipelineTitle,
+  pipelineDescription,
   cards,
-}: ETLPipelineProps) {
+}: Readonly<ETLPipelineProps>) {
   const [currentCard, setCurrentCard] = useState(0);
   const [direction, setDirection] = useState(0);
 
@@ -55,9 +55,14 @@ export default function ETLPipeline({
   };
 
   return (
-    <div className="w-full flex flex-col items-center min-h-screen px-4">
+    <div className="w-full flex flex-col items-center px-4 py-8">
       {/* Pipeline Title */}
       <h2 className="text-3xl font-bold text-white mb-6">{pipelineTitle}</h2>
+
+      {/* Pipeline Description */}
+      <p className="text-gray-300 text-center italic max-w-2xl mb-8">
+        {pipelineDescription}
+      </p>
 
       {/* Card Title */}
       <AnimatePresence mode="wait" custom={direction}>
