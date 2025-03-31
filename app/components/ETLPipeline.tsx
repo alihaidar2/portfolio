@@ -18,6 +18,7 @@ interface ETLCard {
 interface ETLPipelineProps {
   pipelineTitle: string; // Project Title
   pipelineDescription: string; // Project Description
+  pipelineTools: string; // Project Description
   cards: ETLCard[]; // The array of ETL segments (e.g. Extract, Transform, Load)
 }
 
@@ -39,6 +40,7 @@ const variants = {
 export default function ETLPipeline({
   pipelineTitle,
   pipelineDescription,
+  pipelineTools,
   cards,
 }: Readonly<ETLPipelineProps>) {
   const [currentCard, setCurrentCard] = useState(0);
@@ -57,13 +59,11 @@ export default function ETLPipeline({
   return (
     <div className="w-full flex flex-col items-center px-4 py-8">
       {/* Pipeline Title */}
-      <h2 className="text-3xl font-bold text-white mb-6">{pipelineTitle}</h2>
+      <h2 className="text-3xl font-bold text-white mb-5">{pipelineTitle}</h2>
 
       {/* Pipeline Description */}
-      <p className="text-gray-300 text-center italic max-w-2xl mb-8">
-        {pipelineDescription}
-      </p>
-
+      <p className="text-gray-300 italic max-w-2xl ">{pipelineDescription}</p>
+      <p className="text-gray-300 text-left">{pipelineTools}</p>
       {/* Card Title */}
       <AnimatePresence mode="wait" custom={direction}>
         <motion.h3
@@ -79,7 +79,7 @@ export default function ETLPipeline({
       </AnimatePresence>
 
       {/* Card Body */}
-      <div className="relative max-w-2xl w-full text-white rounded-lg shadow-lg pt-8 px-8 pb-4 bg-gray-900">
+      <div className="relative max-w-2xl w-full text-white rounded-lg shadow-lg pt-1 px-8 pb-4 bg-gray-900">
         {/* Left Button */}
         <button
           onClick={handlePrev}
@@ -100,7 +100,7 @@ export default function ETLPipeline({
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
               {/* Step Title */}
-              <h3 className="text-2xl font-semibold text-white text-center mb-4 pb-4 border-b border-gray-700">
+              <h3 className="text-lg font-semibold  text-center mb-4 pb-1.5 border-b text-gray-300 border-gray-700">
                 {cards[currentCard].title}
               </h3>
 

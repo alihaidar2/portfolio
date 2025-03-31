@@ -19,12 +19,13 @@ import ETLPipeline from "./ETLPipeline";
 export default function MigrationProjects() {
   const pipelines = [
     {
-      pipelineTitle: "PDF Digitization Project",
+      pipelineTitle: "PDF Archive Digitization",
       pipelineDescription:
         "This project was initiated to meet the client's need for transforming a collection of scanned PDFs into structured, accurate, and searchable metadata. The client required an automated solution capable of handling large volumes of historical documents efficiently. By leveraging OCR technology, data cleaning techniques, and intelligent metadata extraction methods, the delivered solution significantly improved the client's document organization, retrieval processes, and laid the groundwork for scaling their archival system from 1,000 to over 80,000 documents.",
+      pipelineTools: "Tools & Tech: ",
       cards: [
         {
-          title: "I - Extract",
+          title: "Extract",
           steps: [
             {
               title: "Document Intake & Preprocessing",
@@ -43,7 +44,7 @@ export default function MigrationProjects() {
           ],
         },
         {
-          title: "II - Transform",
+          title: "Transform",
           steps: [
             {
               title: "Text Cleaning & Noise Filtering",
@@ -66,7 +67,7 @@ export default function MigrationProjects() {
           ],
         },
         {
-          title: "III - Load",
+          title: "Load",
           steps: [
             {
               title: "Validation & QA Checks",
@@ -87,23 +88,25 @@ export default function MigrationProjects() {
       ],
     },
     {
-      pipelineTitle: "CSC Migration Project",
+      pipelineTitle: "Legacy Web Content Migration",
       pipelineDescription:
-        "Migrated legacy content from Adobe CMS into Adobe Experience Manager (AEM), standardizing metadata, aligning content to predefined taxonomy, and transforming pages into modular components to facilitate better content management.",
+        "Engineered a structured ETL pipeline to migrate unstandardized web content and metadata from a legacy CMS into a modern, modular content management system. Developed tools for cataloging, validation, and transformation, enabling scalable content ingestion and taxonomy compliance for public-facing web platforms.",
+      pipelineTools: "Tools & Tech: ",
+
       cards: [
         {
-          title: "I - Extract",
+          title: "Extract",
           steps: [
             {
-              title: "Legacy Content Assessment",
+              title: "Legacy Content Cataloging",
               description:
-                "Identified and cataloged existing content and metadata from legacy Adobe CMS, focusing on content relevancy and structure. Extracted metadata into structured formats for review and preparation.",
+                "Indexed and catalogued thousands of pages from the legacy CMS, extracting relevant metadata and content blocks into structured inventories using automated rules and grouping logic.",
               icon: <FaFileAlt className="text-emerald-400 text-4xl mt-4" />,
             },
             {
-              title: "Initial Metadata Extraction",
+              title: "Metadata Extraction & Structuring",
               description:
-                "Used automated extraction rules to gather essential metadata fields such as titles, authors, tags, and creation dates. Organized initial data into Excel and JSON files for streamlined processing.",
+                "Exported metadata fields such as titles, tags, and creation dates into structured formats (CSV/JSON) for validation and normalization in downstream steps.",
               icon: (
                 <FaFileSignature className="text-emerald-400 text-4xl mt-4" />
               ),
@@ -111,43 +114,43 @@ export default function MigrationProjects() {
           ],
         },
         {
-          title: "II - Transform",
+          title: "Transform",
           steps: [
             {
-              title: "Metadata Validation & Normalization",
+              title: "Validation & Normalization",
               description:
-                "Implemented data validation rules to ensure metadata compliance with AEM schemas. Normalized fields by correcting date formats, tags, and removing duplicate or incorrect entries, reducing metadata errors by over 70%.",
+                "Ran rule-based validation scripts to flag incomplete or malformed metadata, applying normalization rules to unify fields (e.g., date formats, tag casing, duplicates).",
               icon: <FaBroom className="text-emerald-400 text-4xl mt-4" />,
             },
             {
-              title: "Taxonomy Mapping & Compliance",
+              title: "Taxonomy Mapping",
               description:
-                "Mapped existing metadata to predefined taxonomy structures in AEM, enforcing strict adherence to content categorization and metadata completeness requirements. Ensured over 90% accuracy in taxonomy alignment.",
+                "Mapped metadata fields to predefined taxonomy structures, enforcing alignment across content categories and ensuring consistent tagging and classification.",
               icon: <FaListAlt className="text-emerald-400 text-4xl mt-4" />,
             },
             {
-              title: "Page & Component Transformation",
+              title: "Content Transformation",
               description:
-                "Converted legacy HTML and metadata into reusable AEM components using automated scripts. Transformed approximately 1000+ pages into modular AEM-compatible structures.",
+                "Converted HTML pages and static content blocks into reusable components compatible with the target CMS schema, enabling modular design and content reuse at scale.",
               icon: <FaUserTag className="text-emerald-400 text-4xl mt-4" />,
             },
           ],
         },
         {
-          title: "III - Load",
+          title: "Load",
           steps: [
             {
               title: "Migration Execution",
               description:
-                "Executed Groovy-based migration scripts to systematically load validated content into AEM. Monitored and managed migration workflows, ensuring reliable ingestion and immediate error logging.",
+                "Used custom scripts to batch-ingest validated and transformed content into the new CMS platform, logging results and handling errors for content or format mismatches.",
               icon: (
                 <FaCheckCircle className="text-emerald-400 text-4xl mt-4" />
               ),
             },
             {
-              title: "Post-Migration Quality Assurance",
+              title: "Post-Migration QA",
               description:
-                "Conducted comprehensive post-migration checks to validate accuracy, proper rendering, and metadata integrity. Reduced post-migration corrections by identifying and addressing discrepancies early.",
+                "Ran post-migration verification checks to ensure correct rendering, taxonomy alignment, and metadata integrity. Logged discrepancies for manual review and updated reports in real time.",
               icon: <FaFileCsv className="text-emerald-400 text-4xl mt-4" />,
             },
           ],
@@ -155,12 +158,14 @@ export default function MigrationProjects() {
       ],
     },
     {
-      pipelineTitle: "Mailbox Migration Project",
+      pipelineTitle: "Exchange Server to Cloud Migration ",
       pipelineDescription:
         "Transitioned mailbox services from on-premises Exchange Server 2019 to Exchange Online, ensuring data integrity, compliance, and scalability with Microsoft 365.",
+      pipelineTools: "Tools & Tech: ",
+
       cards: [
         {
-          title: "I - Extract",
+          title: "Extract",
           steps: [
             {
               title: "Mailbox Data Export",
@@ -181,7 +186,7 @@ export default function MigrationProjects() {
           ],
         },
         {
-          title: "II - Transform",
+          title: "Transform",
           steps: [
             {
               title: "Format Conversion",
@@ -200,7 +205,7 @@ export default function MigrationProjects() {
           ],
         },
         {
-          title: "III - Load",
+          title: "Load",
           steps: [
             {
               title: "Secure API Integration",
@@ -229,23 +234,25 @@ export default function MigrationProjects() {
       ],
     },
     {
-      pipelineTitle: "CRTC Data Engineering Pipeline",
+      pipelineTitle: "CanCon Metadata Consolidation and Tracking System",
       pipelineDescription:
-        "Built a robust pipeline to support CanCon compliance by integrating, cleaning, and enriching metadata from authoritative and external sources. The structured output enables real-time monitoring, validation, and reporting of Canadian content across broadcasters.",
+        "Built a metadata engineering pipeline to consolidate and enrich content data from multiple sources, enabling automated compliance tracking against national broadcasting standards. Created a structured, query-optimized database and developed a full-stack web application for analysts to interact with, validate, and report on metadata in real time.",
+      pipelineTools: "Tools & Tech: C#, .NET, and SQL Server",
+
       cards: [
         {
-          title: "I - Ingest",
+          title: "Extract",
           steps: [
             {
-              title: "CBC Metadata Extraction",
+              title: "Multi-source Metadata Collection",
               description:
-                "Connected to bilingual CBC databases to extract artist, track, contributor, and MAPL metadata. Ensured segregation of English and French content for accurate compliance classification.",
+                "Collected metadata from multiple authoritative and supplementary content databases, including language-specific catalogues and global registries.",
               icon: <FaFileAlt className="text-emerald-400 text-4xl mt-4" />,
             },
             {
-              title: "External Enrichment (Quansic, MusicBrainz)",
+              title: "Unique Identifier Enrichment",
               description:
-                "Queried supplementary APIs to enrich existing records with ISNIs, contributor roles, and missing MAPL data. Applied fuzzy matching and conditional logic to prevent overwrites.",
+                "Augmented core metadata with external identifiers (e.g., ISNI, IPN) to improve record traceability and enrich contributor profiles.",
               icon: (
                 <FaFileSignature className="text-emerald-400 text-4xl mt-4" />
               ),
@@ -253,43 +260,43 @@ export default function MigrationProjects() {
           ],
         },
         {
-          title: "II - Clean & Transform",
+          title: "Transform",
           steps: [
             {
               title: "Deduplication & Normalization",
               description:
-                "Applied fuzzy matching, casing normalization, and ID validation to remove duplicates and align metadata fields across sources.",
+                "Used fuzzy matching and validation logic to consolidate overlapping records, standardize field formats, and resolve naming conflicts.",
               icon: <FaBroom className="text-emerald-400 text-4xl mt-4" />,
             },
             {
-              title: "MAPL Logic & Schema Mapping",
+              title: "Schema Mapping & Compliance Logic",
               description:
-                "Calculated MAPL flags using custom logic and mapped all entities into a relational schema designed for tracking artists, tracks, and contributors.",
+                "Mapped contributors, recordings, and metadata to a structured relational schema. Applied logic to classify content eligibility against broadcast compliance frameworks.",
               icon: <FaListAlt className="text-emerald-400 text-4xl mt-4" />,
             },
             {
-              title: "Track/Contributor Linking",
+              title: "Data Enrichment with External Sources",
               description:
-                "Established relationships between artists, lyricists, and recordings to ensure audit-ready lineage from source to compliance report.",
+                "Filled metadata gaps using third-party open data APIs without overwriting verified core fields, preserving data provenance.",
               icon: <FaUserTag className="text-emerald-400 text-4xl mt-4" />,
             },
           ],
         },
         {
-          title: "III - Load & Validate",
+          title: "Load",
           steps: [
             {
-              title: "Database Integration",
+              title: "Database Integration & Optimization",
               description:
-                "Loaded enriched metadata into a relational SQL Server database with indexing on key fields (ISRC, artist ID) to optimize query speed and report generation.",
+                "Loaded structured data into a relational database, with indexing applied to key fields for efficient querying and analytics.",
               icon: (
                 <FaCheckCircle className="text-emerald-400 text-4xl mt-4" />
               ),
             },
             {
-              title: "Web App Integration",
+              title: "Web Interface & Reporting",
               description:
-                "Exposed a CRUD-enabled web app for analysts to manage data, validate MAPL compliance, and generate station-level reports with real-time visibility.",
+                "Built an internal tool for reviewing contributor metadata and monitoring regulatory thresholds, with support for CRUD, real-time flag validation, and audit trails.",
               icon: <FaFileCsv className="text-emerald-400 text-4xl mt-4" />,
             },
           ],
@@ -300,13 +307,18 @@ export default function MigrationProjects() {
 
   return (
     <>
-      {pipelines.map((pipeline, idx) => (
-        <ETLPipeline
-          key={idx}
-          pipelineTitle={pipeline.pipelineTitle}
-          pipelineDescription={pipeline.pipelineDescription}
-          cards={pipeline.cards}
-        />
+      {pipelines.map((pipeline, index) => (
+        <div key={index} className="w-full">
+          <ETLPipeline
+            pipelineTitle={pipeline.pipelineTitle}
+            pipelineDescription={pipeline.pipelineDescription}
+            pipelineTools={pipeline.pipelineTools}
+            cards={pipeline.cards}
+          />
+          {index < pipelines.length - 1 && (
+            <hr className="my-7 border-t border-gray-500 w-full max-w-4xl mx-auto" />
+          )}
+        </div>
       ))}
     </>
   );
