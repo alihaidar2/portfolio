@@ -21,8 +21,8 @@ export default function MigrationProjects() {
     {
       pipelineTitle: "PDF Archive Digitization",
       pipelineDescription:
-        "This project was initiated to meet the client's need for transforming a collection of scanned PDFs into structured, accurate, and searchable metadata. The client required an automated solution capable of handling large volumes of historical documents efficiently. By leveraging OCR technology, data cleaning techniques, and intelligent metadata extraction methods, the delivered solution significantly improved the client's document organization, retrieval processes, and laid the groundwork for scaling their archival system from 1,000 to over 80,000 documents.",
-      pipelineTools: "Tools & Tech: ",
+        "Developed an end-to-end OCR pipeline to digitize and extract metadata from 1,000+ scanned government documents for archival and search. Led preprocessing, text extraction, and metadata normalization using Tesseract OCR, regex, and external metadata enrichment APIs. Cleaned noisy text artifacts, extracted structured fields like titles and publishers, and exported data to validated CSVs, automating over 85% of manual data entry.",
+      pipelineTools: "Python, Tesseract OCR, Regex, External APIs",
       cards: [
         {
           title: "Extract",
@@ -90,9 +90,8 @@ export default function MigrationProjects() {
     {
       pipelineTitle: "Legacy Web Content Migration",
       pipelineDescription:
-        "Engineered a structured ETL pipeline to migrate unstandardized web content and metadata from a legacy CMS into a modern, modular content management system. Developed tools for cataloging, validation, and transformation, enabling scalable content ingestion and taxonomy compliance for public-facing web platforms.",
-      pipelineTools: "Tools & Tech: ",
-
+        "Engineered a metadata-driven content migration pipeline to restructure legacy web pages into a modern component-based architecture. Designed workflows to extract and validate structured metadata, normalize content against a standardized taxonomy, and transform static pages into reusable components. ",
+      pipelineTools: "Python, Excel, CMS/AEM",
       cards: [
         {
           title: "Extract",
@@ -158,10 +157,10 @@ export default function MigrationProjects() {
       ],
     },
     {
-      pipelineTitle: "Exchange Server to Cloud Migration ",
+      pipelineTitle: "On-Permises to Cloud Mailbox Migration",
       pipelineDescription:
-        "Transitioned mailbox services from on-premises Exchange Server 2019 to Exchange Online, ensuring data integrity, compliance, and scalability with Microsoft 365.",
-      pipelineTools: "Tools & Tech: ",
+        "Designed and implemented a secure mailbox migration pipeline to move 500+ users from on-premises infrastructure to a modern cloud-based email platform. Transformed mailbox exports (.pst) into .eml format and used Microsoft Graph API, EWS API, and OAuth2 for secure cloud import. Built validation scripts for folder structure, metadata, and attachment integrity, enabling complete migration with no reported data loss.",
+      pipelineTools: "C#, OAuth2, MS Exchange, Azure AD, MS Graph API",
 
       cards: [
         {
@@ -234,10 +233,10 @@ export default function MigrationProjects() {
       ],
     },
     {
-      pipelineTitle: "CanCon Metadata Consolidation and Tracking System",
+      pipelineTitle: "Metadata Consolidation and Tracking System",
       pipelineDescription:
-        "Built a metadata engineering pipeline to consolidate and enrich content data from multiple sources, enabling automated compliance tracking against national broadcasting standards. Created a structured, query-optimized database and developed a full-stack web application for analysts to interact with, validate, and report on metadata in real time.",
-      pipelineTools: "Tools & Tech: C#, .NET, and SQL Server",
+        "Built a multi-source metadata pipeline to support national content compliance by consolidating artist and track data from internal and third-party registries. Applied MAPL logic and normalized identifiers using C#, .NET, LINQ, and SQL Server, enabling contributor linking across English and French metadata. Developed a web-based interface for analysts to validate and report on compliance in real time, processing over 100,000 records.",
+      pipelineTools: "C#, .NET, SQL Server, LINQ, HTML/JS",
 
       cards: [
         {
@@ -307,6 +306,13 @@ export default function MigrationProjects() {
 
   return (
     <>
+      <p className="text-gray-400 max-w-3xl text-center mx-auto mt-4 mb-8 italic">
+        End-to-end engineering pipelines that handled large-scale data
+        ingestion, transformation, and loading. These projects involved
+        automating legacy system migrations, validating structured metadata, and
+        building scalable backend workflows across cloud and on-premises
+        environments.
+      </p>
       {pipelines.map((pipeline, index) => (
         <div key={index} className="w-full">
           <ETLPipeline

@@ -13,11 +13,6 @@ export default function Projects() {
       <h1 className="text-4xl font-bold mb-6">
         My <span className="text-emerald-400">Projects</span>
       </h1>
-      <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-        Here&apos;s a curated selection of projects I&apos;ve worked on — each
-        one showcasing a different aspect of my skills in full-stack
-        development, data engineering, and interactive dashboard design.
-      </p>
 
       {/* Tab Buttons */}
       <div className="flex justify-center mb-6 space-x-4">

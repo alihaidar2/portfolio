@@ -18,7 +18,7 @@ interface ETLCard {
 interface ETLPipelineProps {
   pipelineTitle: string; // Project Title
   pipelineDescription: string; // Project Description
-  pipelineTools: string; // Project Description
+  pipelineTools: string; // Project Tools
   cards: ETLCard[]; // The array of ETL segments (e.g. Extract, Transform, Load)
 }
 
@@ -63,7 +63,12 @@ export default function ETLPipeline({
 
       {/* Pipeline Description */}
       <p className="text-gray-300 italic max-w-2xl ">{pipelineDescription}</p>
-      <p className="text-gray-300 text-left">{pipelineTools}</p>
+      {/* <p className="text-gray-300 text-left">{pipelineTools}</p> */}
+      <p className="text-sm text-gray-400 mt-2">
+        <span className="font-semibold text-white">Tools & Technologies:</span>{" "}
+        {pipelineTools}
+      </p>
+
       {/* Card Title */}
       <AnimatePresence mode="wait" custom={direction}>
         <motion.h3
