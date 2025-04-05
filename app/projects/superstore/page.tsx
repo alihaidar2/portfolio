@@ -98,7 +98,7 @@ export default function SuperstorePage() {
       </section>
 
       {/* 7) OPTIONAL DEMO OR REPORT DOWNLOAD */}
-      <section className="max-w-4xl mx-auto mb-10">
+      {/* <section className="max-w-4xl mx-auto mb-10">
         <p className="text-gray-300">
           <a
             href="/superstore/superstore_report.pdf"
@@ -110,7 +110,7 @@ export default function SuperstorePage() {
           </a>{" "}
           to explore the insights, metrics, and design behind this dashboard.
         </p>
-      </section>
+      </section> */}
 
       {/* FOOTNOTE */}
       <p className="text-sm text-gray-400 italic text-center mt-2">
