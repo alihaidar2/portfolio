@@ -1,142 +1,208 @@
 "use client";
 
-import BalajiCarousel from "@/app/components/BalajiCarousel";
+import Image from "next/image";
+import ETLPipeline from "@/app/components/ETLPipeline";
+import { FaFileAlt, FaBroom, FaChartLine, FaCheckCircle } from "react-icons/fa";
 
-// import BalajiCarousel from "../components/BalajiCarousel";
+export default function BalajiFoodsPage() {
+  const pipeline = {
+    pipelineTitle: "Balaji Foods Sales Pipeline",
+    pipelineDescription:
+      "An end-to-end ETL pipeline to clean transaction data and analyze weekly performance, revenue patterns, and payment trends using Power BI dashboards.",
+    pipelineTools: "Python, Pandas, Power BI, DAX",
+    cards: [
+      {
+        title: "Extract",
+        steps: [
+          {
+            title: "Raw Sales Data Collection",
+            description:
+              "Imported sales data from multiple sources with inconsistent date formats (dd-mm-yyyy, mm/dd/yyyy) and missing fields.",
+            icon: <FaFileAlt className="text-emerald-400 text-4xl mt-4" />,
+          },
+          {
+            title: "Initial Validation",
+            description:
+              "Validated basic structure and flagged corrupted or empty rows, ensuring no duplicate entries or broken headers.",
+            icon: <FaCheckCircle className="text-emerald-400 text-4xl mt-4" />,
+          },
+        ],
+      },
+      {
+        title: "Transform",
+        steps: [
+          {
+            title: "Standardize & Clean",
+            description:
+              "Standardized date fields using custom date parsing logic and calculated derived columns (e.g., day of week, month, year).",
+            icon: <FaBroom className="text-emerald-400 text-4xl mt-4" />,
+          },
+          {
+            title: "Feature Engineering",
+            description:
+              "Created new columns like calculated_amount and filled missing transaction types. Verified consistency of item_price * quantity = transaction_amount.",
+            icon: <FaChartLine className="text-emerald-400 text-4xl mt-4" />,
+          },
+        ],
+      },
+      {
+        title: "Load",
+        steps: [
+          {
+            title: "Load to Power BI",
+            description:
+              "Exported cleaned CSV to Power BI and built visuals tracking sales, quantity, and trends across products, time, and payment types.",
+            icon: <FaFileAlt className="text-emerald-400 text-4xl mt-4" />,
+          },
+        ],
+      },
+    ],
+  };
 
-export default function BalajiPage() {
   return (
     <div className="min-h-screen pt-24 px-4 text-white">
-      {/* 1) PROJECT TITLE & OVERVIEW */}
+      {/* HEADER */}
       <section className="max-w-4xl mx-auto mb-10">
         <h1 className="text-4xl font-bold">
-          Balaji Foods <span className="text-emerald-400">Sales Analysis</span>
+          Balaji Foods <span className="text-emerald-400">Sales Dashboard</span>
         </h1>
         <p className="mt-4 text-gray-300">
-          A comprehensive project exploring Balaji Foods&apos; sales
-          performance, product insights, weekly sales patterns, and
-          transaction/payment trends. This overview highlights the entire ETL
-          pipeline along with the resulting interactive dashboards.
+          This Power BI dashboard tracks weekly sales, item performance, and
+          payment breakdowns for a fictional fast-food business. Built after a
+          robust ETL pipeline to clean and engineer raw transaction data.
         </p>
       </section>
 
-      {/* 2) ETL PROCESS (Extract, Transform, Load) */}
-      <section className="max-w-4xl mx-auto mb-10">
-        <h2 className="text-2xl font-bold text-emerald-400 mb-6">
-          ETL Process
+      {/* BUSINESS CONTEXT */}
+      <section className="max-w-4xl mx-auto mb-10 bg-gray-900 p-6 rounded-lg shadow-lg">
+        <h2 className="text-2xl font-bold text-emerald-400 mb-4">
+          Business Challenge
+        </h2>
+        <p className="text-gray-300">
+          Without structured reporting, Balaji Foods lacked clarity on its
+          top-performing items, busiest sales periods, and overall trends. A
+          clean data pipeline and visual dashboard helped bring clarity to
+          day-by-day patterns and weekly performance.
+        </p>
+      </section>
+
+      {/* TECH STACK */}
+      <section className="max-w-4xl mx-auto mb-10 bg-gray-900 p-6 rounded-lg shadow-lg">
+        <h2 className="text-2xl font-bold text-emerald-400 mb-4">Tech Stack</h2>
+        <ul className="list-disc list-inside text-gray-300">
+          <li>Python & Pandas for data cleaning</li>
+          <li>Custom logic for date parsing and verification</li>
+          <li>Power BI with DAX for KPIs and visuals</li>
+          <li>CSV files as raw and output datasets</li>
+        </ul>
+      </section>
+
+      {/* DASHBOARD SECTION */}
+      <section className="max-w-4xl mx-auto mt-10 mb-10">
+        <h2 className="text-2xl font-bold text-emerald-400 mb-4">
+          Dashboard Highlights
         </h2>
 
-        {/* Extract */}
-        <div className="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
-          <h3 className="text-xl font-semibold text-emerald-300">1. Extract</h3>
-          <p className="text-gray-300 mt-2">
-            We collected raw sales data (<em>Balaji Fast Food Sales.csv</em>)
-            with various date formats (<code>dd-mm-yyyy</code>,{" "}
-            <code>mm/dd/yyyy</code>, etc.) among other inconsistencies.
-          </p>
-          <p className="mt-2 text-gray-400 text-sm">
-            Sample snippet of the raw CSV:
-          </p>
-          <div className="overflow-x-auto">
-            <pre className="bg-gray-900 text-gray-200 p-4 mt-3 rounded text-sm w-full min-w-[300px] overflow-x-auto">
-              {`date,transaction_type,transaction_amount,item_price,quantity
-12-01-2025,Sale,389.7,12.99,30
-01/13/2025,Sale,190.0,9.50,20
-...
-`}
-            </pre>
-          </div>
-        </div>
-
-        {/* Transform (Reverted snippet, no scroll) */}
-        <div className="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
-          <h3 className="text-xl font-semibold text-emerald-300">
-            2. Transform
+        <div className="mb-10">
+          <h3 className="text-xl font-semibold text-white mb-2">
+            1. Product Performance & Sales Composition
           </h3>
-          <p className="text-gray-300 mt-2">
-            Using <code>clean_data.py</code>, we parsed multiple date formats,
-            validated transaction amounts, handled missing{" "}
-            <code>transaction_type</code>, and created new features. Below is
-            the <strong>partial snippet</strong> (unchanged):
-          </p>
-          <div className="overflow-x-auto">
-            <pre className="bg-gray-900 text-gray-200 p-4 mt-3 rounded text-sm w-full min-w-[300px] overflow-x-auto">
-              {`import pandas as pd
-
-def parse_dates(date_str):
-    date_formats = ['%d-%m-%Y','%m/%d/%Y','%d/%m/%Y','%Y-%m-%d']
-    for fmt in date_formats:
-        try:
-            return pd.to_datetime(date_str, format=fmt)
-        except ValueError:
-            continue
-    return pd.NaT
-
-data = pd.read_csv('Balaji Fast Food Sales.csv')
-data['date'] = data['date'].apply(parse_dates)
-
-missing_dates_count = data['date'].isnull().sum()
-if missing_dates_count > 0:
-    print(f"Warning: {missing_dates_count} rows invalid!")
-
-data['calculated_amount'] = data['item_price'] * data['quantity']
-assert (data['calculated_amount'] == data['transaction_amount']).all()
-
-data['transaction_type'].fillna('Other', inplace=True)
-data['day_of_week'] = data['date'].dt.day_name()
-data['month'] = data['date'].dt.month_name()
-data['year'] = data['date'].dt.year
-data.to_csv('cleaned_sales_data.csv', index=False)
-print("Data cleaning complete.")
-`}
-            </pre>
-          </div>
-          <p className="text-gray-300 mt-2">
-            This ensures consistent date formats, verifies pricing, and enriches
-            the dataset.
-          </p>
+          <Image
+            src="/balaji/product-insights.png"
+            alt="Product Insights Dashboard"
+            width={1200}
+            height={700}
+            className="rounded-lg shadow-lg"
+          />
+          <ul className="text-gray-300 list-disc list-inside mt-4">
+            <li>Top product by revenue: Sandwich</li>
+            <li>Top product by quantity sold: Cold coffee (1,361 units)</li>
+            <li>Fast food contributes the majority of sales</li>
+            <li>
+              Cold coffee, Sugarcane juice, and Panipuri are high-quantity
+              sellers
+            </li>
+          </ul>
         </div>
 
-        {/* Load (mention Power BI) */}
-        <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-          <h3 className="text-xl font-semibold text-emerald-300">3. Load</h3>
-          <p className="text-gray-300 mt-2">
-            Finally, we loaded <em>cleaned_sales_data.csv</em> into
-            <strong> Power BI </strong> to build dynamic dashboards for ongoing
-            analysis and visual reporting.
-          </p>
+        <div className="mb-10">
+          <h3 className="text-xl font-semibold text-white mb-2">
+            2. Sales Overview by Time
+          </h3>
+          <Image
+            src="/balaji/sales-overview.png"
+            alt="Sales Overview Dashboard"
+            width={1200}
+            height={700}
+            className="rounded-lg shadow-lg"
+          />
+          <ul className="text-gray-300 list-disc list-inside mt-4">
+            <li>Total sales: $275K</li>
+            <li>Average daily sales: $790.89</li>
+            <li>Sales peaked in May, dipped in June</li>
+            <li>Sales consistent across quarters</li>
+          </ul>
+        </div>
+
+        <div className="mb-10">
+          <h3 className="text-xl font-semibold text-white mb-2">
+            3. Sales Patterns by Weekday & Time
+          </h3>
+          <Image
+            src="/balaji/time-weekly-sales-pattern.png"
+            alt="Time-based Sales Patterns Dashboard"
+            width={1200}
+            height={700}
+            className="rounded-lg shadow-lg"
+          />
+          <ul className="text-gray-300 list-disc list-inside mt-4">
+            <li>Monday has the highest total sales</li>
+            <li>Friday and Tuesday are the lowest sales days</li>
+            <li>Afternoon and Night are the most active time slots</li>
+            <li>Heatmap shows Afternoon activity across all days</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-xl font-semibold text-white mb-2">
+            4. Transaction & Payment Type Insights
+          </h3>
+          <Image
+            src="/balaji/transaction-payment-insights.png"
+            alt="Transaction Type Insights Dashboard"
+            width={1200}
+            height={700}
+            className="rounded-lg shadow-lg"
+          />
+          <ul className="text-gray-300 list-disc list-inside mt-4">
+            <li>Total transactions: 1,000,000</li>
+            <li>Average transaction value: $275.23</li>
+            <li>Cash: 476K transactions | $132,840 total</li>
+            <li>Online: 417K transactions | $110,595 total</li>
+            <li>Other: 107K transactions | $31,795 total</li>
+            <li>Cash is the dominant payment method</li>
+            <li>Highest transaction volume in May</li>
+          </ul>
         </div>
       </section>
 
-      {/* 3) FINAL DASHBOARD (Single Big Card / Carousel) */}
-      <section className="max-w-4xl mx-auto mb-10">
-        <h2 className="text-2xl font-bold text-emerald-400 mb-6">
-          Final Dashboard
+      {/* MY ROLE */}
+      <section className="max-w-4xl mx-auto mb-10 bg-gray-900 p-6 rounded-lg shadow-lg">
+        <h2 className="text-2xl font-bold text-emerald-400 mb-4">
+          My Contributions
         </h2>
-        <p className="text-gray-300 mb-4">
-          Below, you can cycle through the main screenshots in one large card.
-          After that, check out the video demo showing the dashboard’s
-          interactivity.
+        <p className="text-gray-300">
+          I led the entire ETL and visualization process—writing Python scripts
+          for data parsing, validating accuracy, performing feature engineering,
+          and building the final dashboard in Power BI. Designed for
+          stakeholders to identify trends and plan inventory and staffing
+          accordingly.
         </p>
-
-        {/* Card Carousel */}
-        <BalajiCarousel />
-
-        {/* OPTIONAL VIDEO DEMO (Same width as the card) */}
-        {/* <div className="bg-gray-800 p-4 rounded-lg shadow-lg w-full max-w-4xl mx-auto">
-          <video controls className="w-full rounded">
-            <source src="/videos/balaji_demo.mp4" type="video/mp4" />
-            fallback message
-            Your browser does not support HTML5 video.
-          </video>
-        </div> */}
       </section>
 
+      {/* REPORT DOWNLOAD */}
       <section className="max-w-4xl mx-auto mb-10">
-        <p className="text-gray-300 mb-4">
-          Want to see how a data-driven dashboard like this could help you solve
-          real business challenges?
-          <br />
+        <p className="text-gray-300">
           <a
             href="/balaji_food/balaji_food_report.pdf"
             target="_blank"
@@ -145,14 +211,21 @@ print("Data cleaning complete.")
           >
             Download the full report
           </a>{" "}
-          for a closer look at the problems it addresses, the value it delivers,
-          and how the same approach could be adapted to your own data.
+          to explore insights and methodology in more detail.
         </p>
       </section>
 
+      {/* ETL PIPELINE */}
+      <ETLPipeline
+        pipelineTitle={pipeline.pipelineTitle}
+        pipelineDescription={pipeline.pipelineDescription}
+        pipelineTools={pipeline.pipelineTools}
+        cards={pipeline.cards}
+      />
+
       <p className="text-sm text-gray-400 italic text-center mt-2">
-        *The visualizations shown are based on sample sales data generated for
-        demo purposes.
+        *This dashboard is based on simulated data for internal analytics
+        demonstration.
       </p>
     </div>
   );

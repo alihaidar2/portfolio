@@ -21,7 +21,7 @@ export default function MigrationProjects() {
     {
       pipelineTitle: "PDF Archive Digitization",
       pipelineDescription:
-        "Developed an end-to-end OCR pipeline to digitize and extract metadata from 1,000+ scanned government documents for archival and search. Led preprocessing, text extraction, and metadata normalization using Tesseract OCR, regex, and external metadata enrichment APIs. Cleaned noisy text artifacts, extracted structured fields like titles and publishers, and exported data to validated CSVs, automating over 85% of manual data entry.",
+        "Led the design of an OCR pipeline to digitize over 1,000 scanned records, aiming to replace manual data entry with automated metadata extraction and export.",
       pipelineTools: "Python, Tesseract OCR, Regex, External APIs",
       cards: [
         {
@@ -90,7 +90,7 @@ export default function MigrationProjects() {
     {
       pipelineTitle: "Legacy Web Content Migration",
       pipelineDescription:
-        "Engineered a metadata-driven content migration pipeline to restructure legacy web pages into a modern component-based architecture. Designed workflows to extract and validate structured metadata, normalize content against a standardized taxonomy, and transform static pages into reusable components. ",
+        "Rebuilt a legacy CMS by transforming static pages into structured, reusable components for scalable content updates and improved maintainability.",
       pipelineTools: "Python, Excel, CMS/AEM",
       cards: [
         {
@@ -159,9 +159,8 @@ export default function MigrationProjects() {
     {
       pipelineTitle: "On-Permises to Cloud Mailbox Migration",
       pipelineDescription:
-        "Designed and implemented a secure mailbox migration pipeline to move 500+ users from on-premises infrastructure to a modern cloud-based email platform. Transformed mailbox exports (.pst) into .eml format and used Microsoft Graph API, EWS API, and OAuth2 for secure cloud import. Built validation scripts for folder structure, metadata, and attachment integrity, enabling complete migration with no reported data loss.",
+        "Migrated 500+ user mailboxes to the cloud to improve accessibility and compliance, using secure OAuth2 workflows and Microsoft’s Graph API.",
       pipelineTools: "C#, OAuth2, MS Exchange, Azure AD, MS Graph API",
-
       cards: [
         {
           title: "Extract",
@@ -235,9 +234,8 @@ export default function MigrationProjects() {
     {
       pipelineTitle: "Metadata Consolidation and Tracking System",
       pipelineDescription:
-        "Built a multi-source metadata pipeline to support national content compliance by consolidating artist and track data from internal and third-party registries. Applied MAPL logic and normalized identifiers using C#, .NET, LINQ, and SQL Server, enabling contributor linking across English and French metadata. Developed a web-based interface for analysts to validate and report on compliance in real time, processing over 100,000 records.",
+        "Built a centralized system to unify 100K+ content records and validate Canadian content compliance, enabling easier reporting and audit readiness.",
       pipelineTools: "C#, .NET, SQL Server, LINQ, HTML/JS",
-
       cards: [
         {
           title: "Extract",

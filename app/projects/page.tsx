@@ -21,7 +21,7 @@ export default function Projects() {
           className={`px-4 py-2 rounded ${
             activeTab === "dashboard"
               ? "bg-emerald-500 text-white"
-              : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+              : "bg-gray-900 text-gray-300 hover:bg-gray-700"
           }`}
         >
           Dashboard Projects
@@ -31,7 +31,7 @@ export default function Projects() {
           className={`px-4 py-2 rounded ${
             activeTab === "migration"
               ? "bg-emerald-500 text-white"
-              : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+              : "bg-gray-900 text-gray-300 hover:bg-gray-700"
           }`}
         >
           Migration Projects

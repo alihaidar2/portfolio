@@ -44,7 +44,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-gray-800 bg-opacity-95 py-4 rounded-lg shadow-lg absolute w-full left-0 top-16">
+        <div className="md:hidden bg-gray-900 bg-opacity-95 py-4 rounded-lg shadow-lg absolute w-full left-0 top-16">
           <div className="flex flex-col items-center space-y-4">
             <Link
               href="/projects"
