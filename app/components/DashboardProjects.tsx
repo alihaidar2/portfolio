@@ -7,7 +7,7 @@ export default function DashboardProjects() {
       dashboardTitle: "Balaji Foods Sales Analysis",
       dashboardDescription:
         "A deep dive into sales patterns, product insights, and payment trends from Balaji Foods' sales data.",
-      thumbnailUrl: "/balaji_food/product-insights.png",
+      thumbnailUrl: "/balaji/product-insights.png",
       link: "/projects/balaji",
     },
     {
