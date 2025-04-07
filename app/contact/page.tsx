@@ -2,7 +2,7 @@
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faFileAlt } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faFileAlt } from "@fortawesome/free-solid-svg-icons";
 
 export default function ContactPage() {
   return (
@@ -12,14 +12,15 @@ export default function ContactPage() {
           Let&apos;s Work Together
         </h1>
         <p className="text-gray-300 mb-8 text-lg">
-          Have a project in mind or just want to say hello? Reach out — I
-          usually respond within 24 hours.
+          Have something in mind or just want to chat? I’d love to hear from
+          you.
         </p>
         <a
           href="mailto:ahaidar97@outlook.com"
           className="inline-block px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-lg shadow-lg transition duration-300 text-lg"
         >
-          📧 Send me an email
+          <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+          Send me an email
         </a>
 
         {/* Social Links */}

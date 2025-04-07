@@ -7,8 +7,19 @@ export default function Home() {
         <h1 className="text-5xl font-bold animate-fade-in">
           Hello, I&apos;m <span className="text-emerald-400">Ali</span>
         </h1>
-        <p className="mt-4 text-lg text-gray-300">
-          Full Stack Developer | Data Engineer | AI Enthusiast
+        <p className="text-gray-300 mb-8 text-lg pt-5">
+          <span className="font-medium text-white">
+            I build things with code
+          </span>{" "}
+          — mostly apps and dashboards that help people{" "}
+          <span className="text-emerald-400">see their data more clearly</span>.
+          I&apos;m also big into{" "}
+          <span className="italic">fantasy football</span> and{" "}
+          <span className="italic">soccer stats</span>, and I&apos;m always
+          curious about how <span className="text-emerald-400">new tech</span>{" "}
+          like <span className="text-emerald-400">AI</span> or{" "}
+          <span className="text-emerald-400">quantum</span> might fit into the
+          mix one day.
         </p>
 
         {/* CTA Buttons */}
